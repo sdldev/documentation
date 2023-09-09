@@ -5,8 +5,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "start": "astro build && astro preview --port 3000",
+    "build": "astro build && astro dev",
     "preview": "astro preview",
     "astro": "astro"
   },
