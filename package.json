@@ -4,10 +4,10 @@
   "description": "server documentation, Build With astro starlight",
   "version": "1.0.0",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --port 3000",
     "start": "astro build && astro preview --port 3000",
-    "build": "astro build && astro dev",
-    "preview": "astro preview",
+    "build": "astro build && astro dev --port 3000",
+    "preview": "astro preview --port 3000",
     "astro": "astro"
   },
   "repository": {
