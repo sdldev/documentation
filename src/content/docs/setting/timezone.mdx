@@ -1,0 +1,90 @@
+---
+title: Time Zone
+description: Stting Time Zone di linux ubuntu/debian/mint 
+---
+
+# Setting Timezone
+
+Cek setting
+```js
+timedatectl
+```
+
+:::caution[view]
+```               Local time: Thu 2023-09-07 11:45:30 UTC
+           Universal time: Thu 2023-09-07 11:45:30 UTC
+                 RTC time: n/a
+                Time zone: Etc/UTC (UTC, +0000)
+System clock synchronized: yes
+              NTP service: inactive
+          RTC in local TZ: no
+```
+:::
+
+cek list Timezone
+
+```js
+timedatectl list-timezones
+```
+
+:::caution[view]
+```
+Africa/Abidjan
+Africa/Accra
+Africa/Addis_Ababa
+Africa/Algiers
+Africa/Asmara
+Africa/Asmera
+Africa/Bamako
+Africa/Bangui
+Africa/Banjul
+Africa/Bissau
+Africa/Blantyre
+Africa/Brazzaville
+Africa/Bujumbura
+....
+....
+Asia/Jakarta
+...
+...
+```
+:::
+
+Set Timezone
+
+```
+sudo timedatectl set-timezone Asia/Jakarta
+```
+
+
+Cek setting
+```
+timedatectl
+```
+:::caution[view]
+
+```               Local time: Thu 2023-09-07 18:46:45 WIB
+           Universal time: Thu 2023-09-07 11:46:45 UTC
+                 RTC time: n/a
+                Time zone: Asia/Jakarta (WIB, +0700)
+System clock synchronized: yes
+              NTP service: inactive
+          RTC in local TZ: no
+
+```
+:::
+
+Identify the timezone you want to configure, and create a symlink :
+
+```
+ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+```
+
+```
+date
+```
+:::caution[view]
+``` 
+Thu Sep  7 18:56:05 WIB 2023
+```
+:::
